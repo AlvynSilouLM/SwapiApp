@@ -14,6 +14,7 @@
 		1B4AB48D2A149A3C0088052B /* V1ExerciceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB48C2A149A3C0088052B /* V1ExerciceTests.swift */; };
 		1B4AB4972A149A3C0088052B /* V1ExerciceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4962A149A3C0088052B /* V1ExerciceUITests.swift */; };
 		1B4AB4992A149A3C0088052B /* V1ExerciceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4982A149A3C0088052B /* V1ExerciceUITestsLaunchTests.swift */; };
+		1B4AB4AA2A14A24F0088052B /* EnkiDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 1B4AB4A92A14A24F0088052B /* EnkiDesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B4AB4AA2A14A24F0088052B /* EnkiDesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +146,7 @@
 			);
 			name = V1Exercice;
 			packageProductDependencies = (
+				1B4AB4A92A14A24F0088052B /* EnkiDesignSystem */,
 			);
 			productName = V1Exercice;
 			productReference = 1B4AB4782A149A3A0088052B /* V1Exercice.app */;
@@ -218,6 +221,7 @@
 			);
 			mainGroup = 1B4AB46F2A149A3A0088052B;
 			packageReferences = (
+				1B4AB4A82A14A24F0088052B /* XCRemoteSwiftPackageReference "enki-design-system-ios" */,
 			);
 			productRefGroup = 1B4AB4792A149A3A0088052B /* Products */;
 			projectDirPath = "";
@@ -587,6 +591,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1B4AB4A82A14A24F0088052B /* XCRemoteSwiftPackageReference "enki-design-system-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adeo/enki-design-system-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 0.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B4AB4A92A14A24F0088052B /* EnkiDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B4AB4A82A14A24F0088052B /* XCRemoteSwiftPackageReference "enki-design-system-ios" */;
+			productName = EnkiDesignSystem;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1B4AB4702A149A3A0088052B /* Project object */;
 }
