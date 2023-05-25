@@ -36,6 +36,12 @@ extension HTTPURLResponse {
     }
 }
 
+extension Data {
+    static func stub(with content: String = "{\"id\": 4}") -> Data {
+        Data(content.utf8)
+    }
+}
+
 private extension URLRequest {
     func append(headers: [String: String]) -> URLRequest {
         var request = self
