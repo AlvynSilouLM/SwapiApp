@@ -41,6 +41,17 @@ final class URLSessionHTTPClientTests: XCTestCase {
         XCTAssertEqual(receivedError?.code, requestError.code)
     }
 
+    func test_fetchRequest_succeedsOnHTTPURLResponseWithData() async throws {
+        let data = Data.stub()
+        let response = try HTTPURLResponse.stub(statusCode: 204)
+
+        let receivedValues = await resultValuesFor((data: data, response: response, error: nil))
+
+        XCTAssertEqual(receivedValues?.data, data)
+        XCTAssertEqual(receivedValues?.response.url, response.url)
+        XCTAssertEqual((receivedValues?.response as? HTTPURLResponse)?.statusCode, response.statusCode)
+    }
+
     // MARK: - Helpers
 
     private func makeSUT() -> HTTPClient {
@@ -72,6 +83,16 @@ final class URLSessionHTTPClientTests: XCTestCase {
             return nil
         } catch {
             return error
+        }
+    }
+
+    private func resultValuesFor(_ urlContent: URLContent? = nil, file: StaticString = #file, line: UInt = #line) async -> (data: Data, response: URLResponse)? {
+        do {
+            let values = try await resultFor(urlContent)
+            return values
+        } catch {
+            XCTFail("Expected success, got \(error) instead", file: file, line: line)
+            return nil
         }
     }
 

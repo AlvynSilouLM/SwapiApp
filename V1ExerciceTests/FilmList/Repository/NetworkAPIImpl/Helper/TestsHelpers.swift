@@ -30,9 +30,12 @@ extension URLRequest {
 
 extension HTTPURLResponse {
     static func stub(url:  () throws -> URL = { try URL.stub() },
-                     statusCode: Int = 200) throws -> HTTPURLResponse? {
+                     statusCode: Int = 200) throws -> HTTPURLResponse {
+        guard let response = HTTPURLResponse(url: try url(), statusCode: statusCode, httpVersion: nil, headerFields: nil) else {
+            throw "Cannot create response"
+        }
 
-        HTTPURLResponse(url: try url(), statusCode: statusCode, httpVersion: nil, headerFields: nil)
+        return response
     }
 }
 
