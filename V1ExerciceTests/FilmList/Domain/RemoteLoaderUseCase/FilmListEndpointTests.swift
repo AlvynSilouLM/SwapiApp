@@ -14,6 +14,6 @@ final class FilmListEndpointTests: XCTestCase {
 
         XCTAssertEqual(received.scheme, "http", "scheme")
         XCTAssertEqual(received.host, "base-url.com", "host")
-        XCTAssertEqual(received.path, "/v1/feed", "path")
+        XCTAssertEqual(received.path, "/api/films", "path")
     }
 }

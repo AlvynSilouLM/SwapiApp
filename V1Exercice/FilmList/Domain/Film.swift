@@ -5,12 +5,12 @@
 
 import Foundation
 
-public struct Film {
-    public let id: String
+public struct Film: Equatable {
+    public let id: Int
     public let title: String
     public let description: String
     
-    public init(id: String, title: String, description: String) {
+    public init(id: Int, title: String, description: String) {
         self.id = id
         self.title = title
         self.description = description

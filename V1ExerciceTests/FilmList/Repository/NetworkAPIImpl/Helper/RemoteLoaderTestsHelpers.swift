@@ -5,6 +5,12 @@
 
 import Foundation
 
+extension Data {
+    static func makeJSON(from jsonDict: [String: Any]) throws -> Data {
+        try JSONSerialization.data(withJSONObject: jsonDict)
+    }
+}
+
 extension URL {
     static func stub(with urlString: String = "https://any-url.com") throws -> URL {
         guard let url = URL(string: urlString) else {
@@ -26,7 +32,6 @@ extension URLRequest {
         return request.append(headers: headers)
     }
 }
-
 
 extension HTTPURLResponse {
     static func stub(url:  () throws -> URL = { try URL.stub() },

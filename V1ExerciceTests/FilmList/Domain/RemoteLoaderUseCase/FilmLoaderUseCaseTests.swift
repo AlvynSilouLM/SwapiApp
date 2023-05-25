@@ -15,20 +15,37 @@ final class FilmLoaderUseCaseTests: XCTestCase {
     }
 
     func test_load_shouldLoadFilmsFromHTTPClient() async throws {
-        let request = try URLRequest.stub()
-        let (sut, httpClient) = try makeSUT(request: request)
-        httpClient.stub()
+        let film1 = Film.stub()
+        let dataJson = try Data.makeJSON(from: ["results": [film1.json]])
+        let response = try HTTPURLResponse.stub(statusCode: 200)
 
-        let result = try await sut.load()
+        let request = try URLRequest.stub()
+        var receivedResponse: URLResponse?
+        var receivedData: Data?
+        let mapper: (Data, URLResponse) throws -> [Film] = {
+            receivedData = $0
+            receivedResponse = $1
+            return [film1.model]
+        }
+        let (sut, httpClient) = try makeSUT(request: request, mapper: mapper)
+        httpClient.stub(data: dataJson, response: response )
+
+        let filmlist = try await sut.load()
 
         XCTAssertEqual(httpClient.callCount, 1)
         XCTAssertEqual(httpClient.request(), request)
+        XCTAssertEqual(filmlist, [film1.model])
+        XCTAssertEqual(receivedData, dataJson)
+        XCTAssertEqual(receivedResponse, response)
     }
 
     // MARK: - Helpers
-    private func makeSUT(request: @autoclosure () throws -> URLRequest = try URLRequest.stub()) throws -> (FilmLoaderUseCase, HTTPClientSpy) {
+    private func makeSUT(request: @autoclosure () throws -> URLRequest = try URLRequest.stub(),
+                         mapper: @escaping (Data, URLResponse) throws -> [Film] = { _, _ in [] }) throws -> (FilmLoaderUseCase, HTTPClientSpy) {
         let httpClient = HTTPClientSpy()
-        let loadFilmUsecase = FilmLoaderUseCase(request: try URLRequest.stub(), httpClient: httpClient)
+        let loadFilmUsecase = FilmLoaderUseCase(request: try URLRequest.stub(),
+                                                httpClient: httpClient,
+                                                mapper: mapper)
 
         return (loadFilmUsecase, httpClient)
     }
