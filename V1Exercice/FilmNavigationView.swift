@@ -5,9 +5,9 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct FilmNavigationView: View {
     var body: some View {
-        NavigationStack {
+        NavigationView {
             FilmsListView()
                 .navigationBarTitle(Text("Films"))
         }
@@ -16,6 +16,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FilmNavigationView()
     }
 }

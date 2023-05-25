@@ -9,7 +9,7 @@ import SwiftUI
 struct V1ExerciceApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FilmNavigationView()
         }
     }
 }

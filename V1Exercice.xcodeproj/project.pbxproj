@@ -17,7 +17,7 @@
 		1B4AB4AA2A14A24F0088052B /* EnkiDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 1B4AB4A92A14A24F0088052B /* EnkiDesignSystem */; };
 		1B4AB4AE2A14A71F0088052B /* FilmsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4AD2A14A71F0088052B /* FilmsListViewModel.swift */; };
 		1B4AB4B32A14ACDC0088052B /* FilmListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4B22A14ACDC0088052B /* FilmListItemView.swift */; };
-		1B4AB4B72A14B3430088052B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4B62A14B3430088052B /* ContentView.swift */; };
+		1B4AB4B72A14B3430088052B /* FilmNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4B62A14B3430088052B /* FilmNavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		1B4AB4982A149A3C0088052B /* V1ExerciceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V1ExerciceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1B4AB4AD2A14A71F0088052B /* FilmsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsListViewModel.swift; sourceTree = "<group>"; };
 		1B4AB4B22A14ACDC0088052B /* FilmListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmListItemView.swift; sourceTree = "<group>"; };
-		1B4AB4B62A14B3430088052B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1B4AB4B62A14B3430088052B /* FilmNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmNavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 		1B4AB47A2A149A3A0088052B /* V1Exercice */ = {
 			isa = PBXGroup;
 			children = (
-				1B4AB4B62A14B3430088052B /* ContentView.swift */,
+				1B4AB4B62A14B3430088052B /* FilmNavigationView.swift */,
 				1B4AB47B2A149A3A0088052B /* V1ExerciceApp.swift */,
 				1B4AB4AB2A14A3B40088052B /* FilmList */,
 				1B4AB4812A149A3C0088052B /* Preview Content */,
@@ -121,6 +121,7 @@
 		1B4AB48B2A149A3C0088052B /* V1ExerciceTests */ = {
 			isa = PBXGroup;
 			children = (
+				1B0705612A1F3788008D4F7D /* FilmList */,
 				1B4AB48C2A149A3C0088052B /* V1ExerciceTests.swift */,
 			);
 			path = V1ExerciceTests;
@@ -300,6 +301,7 @@
 			files = (
 				1B4AB47E2A149A3A0088052B /* FilmsListView.swift in Sources */,
 				1B4AB4B72A14B3430088052B /* ContentView.swift in Sources */,
+				1B4AB4B72A14B3430088052B /* FilmNavigationView.swift in Sources */,
 				1B4AB4AE2A14A71F0088052B /* FilmsListViewModel.swift in Sources */,
 				1B4AB47C2A149A3A0088052B /* V1ExerciceApp.swift in Sources */,
 				1B4AB4B32A14ACDC0088052B /* FilmListItemView.swift in Sources */,
