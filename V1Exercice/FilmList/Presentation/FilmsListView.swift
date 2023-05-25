@@ -7,7 +7,7 @@ import SwiftUI
 import EnkiDesignSystem
 
 struct FilmsListView: View {
-    @State var films: [FilmListItemViewModel] = []
+    @Binding var films: [FilmListItemViewModel]
 
     var body: some View {
 
@@ -29,13 +29,14 @@ struct FilmsListView: View {
 }
 
 struct FilmsListView_Previews: PreviewProvider {
+    @State static var films: [FilmListItemViewModel] = []
     static var previews: some View {
         Group {
-            FilmsListView()
+            FilmsListView(films: $films)
                 .padding()
                 .previewDisplayName("Loading State or Empty State")
 
-            FilmsListView(films: [" 3. \"A New Faith\"", "4. \"A New Hope\""])
+            FilmsListView(films: .constant([" 3. \"A New Faith\"", "4. \"A New Hope\""]))
                 .padding()
                 .previewDisplayName("Films List")
         }
