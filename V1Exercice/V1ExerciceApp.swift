@@ -32,13 +32,23 @@ struct V1ExerciceApp: App {
     }
 }
 
-
+@MainActor
 class FilmAppNavigationViewModel: ObservableObject {
     @Published var filmListLoader: FilmLoaderUseCase?
+
+    @Published var films: [Film] = []
 
     convenience init(filmListLoader: FilmLoaderUseCase) {
         self.init()
         self.filmListLoader = filmListLoader
     }
 
+    func load() async {
+        do {
+            films = try await filmListLoader?.load() ?? []
+            print("Films COunt: \(films.count)")
+        } catch {
+            print(error)
+        }
+    }
 }

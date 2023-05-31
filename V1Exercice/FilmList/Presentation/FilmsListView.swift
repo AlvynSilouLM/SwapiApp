@@ -6,8 +6,8 @@
 import SwiftUI
 import EnkiDesignSystem
 
-struct FilmsListView: View {
-    @Binding var films: [FilmListItemViewModel]
+struct FilmsListView<Details : View>: View {
+    @Binding var films: [FilmListItemViewModel<Details>]
 
     var body: some View {
 
@@ -16,7 +16,9 @@ struct FilmsListView: View {
         } else {
             EnkiList {
                 ForEach(films, id: \.self) { film in
-                    cell(for: film)
+                    NavigationLink(destination: film.destination) {
+                        cell(for: film.title)
+                    }
                 }
                 .listRowSeparator(.hidden)
             }
@@ -29,14 +31,17 @@ struct FilmsListView: View {
 }
 
 struct FilmsListView_Previews: PreviewProvider {
-    @State static var films: [FilmListItemViewModel] = []
+    @State static var films: [FilmListItemViewModel<Text>] = []
+    @State static var films2: [FilmListItemViewModel<Text>] = [.init(title: " 3. \"A New Faith\"", destination: {
+        Text("Ici Details")
+    } )]
+
     static var previews: some View {
         Group {
-            FilmsListView(films: $films)
+            FilmsListView<Text>(films: $films)
                 .padding()
                 .previewDisplayName("Loading State or Empty State")
-
-            FilmsListView(films: .constant([" 3. \"A New Faith\"", "4. \"A New Hope\""]))
+            FilmsListView<Text>(films: $films2)
                 .padding()
                 .previewDisplayName("Films List")
         }

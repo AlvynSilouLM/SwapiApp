@@ -12,10 +12,6 @@ public struct FilmListItemView: View {
     var title: String
 
     public var body: some View {
-        RightChevronCell {
-            Text(title)
-                .enkiFont(.bodyMediumHighlight)
-        }
+        LabelCell(label: title)
     }
-
 }

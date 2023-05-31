@@ -32,6 +32,9 @@
 		1B4AB4AE2A14A71F0088052B /* FilmsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4AD2A14A71F0088052B /* FilmsListViewModel.swift */; };
 		1B4AB4B32A14ACDC0088052B /* FilmListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4B22A14ACDC0088052B /* FilmListItemView.swift */; };
 		1B4AB4B72A14B3430088052B /* FilmNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4B62A14B3430088052B /* FilmNavigationView.swift */; };
+		1B7E5BFF2A27216B00DF3F8B /* FilmDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E5BFE2A27216B00DF3F8B /* FilmDetailsView.swift */; };
+		1B7E5C012A2726EC00DF3F8B /* FilmListItemViewModel+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E5C002A2726EC00DF3F8B /* FilmListItemViewModel+Mapping.swift */; };
+		1B7E5C032A272FD500DF3F8B /* FilmDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E5C022A272FD500DF3F8B /* FilmDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		1B4AB4AD2A14A71F0088052B /* FilmsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsListViewModel.swift; sourceTree = "<group>"; };
 		1B4AB4B22A14ACDC0088052B /* FilmListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmListItemView.swift; sourceTree = "<group>"; };
 		1B4AB4B62A14B3430088052B /* FilmNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmNavigationView.swift; sourceTree = "<group>"; };
+		1B7E5BFE2A27216B00DF3F8B /* FilmDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailsView.swift; sourceTree = "<group>"; };
+		1B7E5C002A2726EC00DF3F8B /* FilmListItemViewModel+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmListItemViewModel+Mapping.swift"; sourceTree = "<group>"; };
+		1B7E5C022A272FD500DF3F8B /* FilmDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +238,7 @@
 				1B4AB4B62A14B3430088052B /* FilmNavigationView.swift */,
 				1B4AB47B2A149A3A0088052B /* V1ExerciceApp.swift */,
 				1B4AB4AB2A14A3B40088052B /* FilmList */,
+				1B7E5BFD2A27213D00DF3F8B /* FilmDetails */,
 				1B4AB4812A149A3C0088052B /* Preview Content */,
 			);
 			path = V1Exercice;
@@ -279,6 +286,7 @@
 				1B4AB4B12A14ACBA0088052B /* SubViews */,
 				1B4AB47D2A149A3A0088052B /* FilmsListView.swift */,
 				1B4AB4AD2A14A71F0088052B /* FilmsListViewModel.swift */,
+				1B7E5C002A2726EC00DF3F8B /* FilmListItemViewModel+Mapping.swift */,
 				1B4AB47F2A149A3C0088052B /* Assets.xcassets */,
 			);
 			path = Presentation;
@@ -290,6 +298,15 @@
 				1B4AB4B22A14ACDC0088052B /* FilmListItemView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		1B7E5BFD2A27213D00DF3F8B /* FilmDetails */ = {
+			isa = PBXGroup;
+			children = (
+				1B7E5BFE2A27216B00DF3F8B /* FilmDetailsView.swift */,
+				1B7E5C022A272FD500DF3F8B /* FilmDetailsViewModel.swift */,
+			);
+			path = FilmDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,8 +447,11 @@
 			files = (
 				1B0705602A1F3724008D4F7D /* URLSessionHTTPClient.swift in Sources */,
 				1B4AB47E2A149A3A0088052B /* FilmsListView.swift in Sources */,
+				1B7E5C012A2726EC00DF3F8B /* FilmListItemViewModel+Mapping.swift in Sources */,
 				1B07057B2A2066F9008D4F7D /* FilmListEndpoint.swift in Sources */,
 				1B0705732A205E71008D4F7D /* FilmLoaderUseCase.swift in Sources */,
+				1B7E5BFF2A27216B00DF3F8B /* FilmDetailsView.swift in Sources */,
+				1B7E5C032A272FD500DF3F8B /* FilmDetailsViewModel.swift in Sources */,
 				1B4AB4B72A14B3430088052B /* FilmNavigationView.swift in Sources */,
 				1B0705802A2072E0008D4F7D /* FilmListAdapter.swift in Sources */,
 				1B07055D2A1F3636008D4F7D /* HTTPClient.swift in Sources */,
