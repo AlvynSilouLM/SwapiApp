@@ -15,7 +15,7 @@ public class FilmListAdapter {
         case invalidData
     }
 
-    public static func adapt(_ data: Data, from response: URLResponse) throws -> [Film]  {
+    public static func convert(_ data: Data, from response: URLResponse) throws -> [Film]  {
         guard let response = response as? HTTPURLResponse, response.isOK200 else {
             throw Error.invalidData
         }

@@ -13,7 +13,7 @@ final class FilmListAdapterTests: XCTestCase {
 
         try samples.forEach { code in
             XCTAssertThrowsError(
-                try FilmListAdapter.adapt(jsonData, from: HTTPURLResponse.stub(statusCode: code))
+                try FilmListAdapter.convert(jsonData, from: HTTPURLResponse.stub(statusCode: code))
             )
         }
     }
@@ -22,14 +22,14 @@ final class FilmListAdapterTests: XCTestCase {
         let invalidJSONData = Data("invalid json".utf8)
 
         XCTAssertThrowsError(
-            try FilmListAdapter.adapt(invalidJSONData, from: HTTPURLResponse.stub(statusCode: 200))
+            try FilmListAdapter.convert(invalidJSONData, from: HTTPURLResponse.stub(statusCode: 200))
         )
     }
 
     func test_adapt_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() throws {
         let emptyListJSON = try Data.makeJSON(from: ["results": []])
 
-        let result = try FilmListAdapter.adapt(emptyListJSON, from: HTTPURLResponse.stub(statusCode: 200))
+        let result = try FilmListAdapter.convert(emptyListJSON, from: HTTPURLResponse.stub(statusCode: 200))
 
         XCTAssertEqual(result, [])
     }
@@ -41,7 +41,7 @@ final class FilmListAdapterTests: XCTestCase {
 
         let json = try Data.makeJSON(from: ["results": [film1.json, film2.json]])
 
-        let result = try FilmListAdapter.adapt(json, from: HTTPURLResponse.stub(statusCode: 200))
+        let result = try FilmListAdapter.convert(json, from: HTTPURLResponse.stub(statusCode: 200))
 
         XCTAssertEqual(result, [film1.model, film2.model])
     }

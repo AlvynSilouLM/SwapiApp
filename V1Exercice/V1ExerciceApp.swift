@@ -27,7 +27,7 @@ struct V1ExerciceApp: App {
         }
         let filmListLoader = FilmLoaderUseCase(request: filmListRequest,
                                                httpClient: httpClient,
-                                               mapper: FilmListAdapter.adapt(_:from:))
+                                               mapper: FilmListAdapter.convert(_:from:))
         self.filmListLoaderVM.filmListLoader = filmListLoader
     }
 }
