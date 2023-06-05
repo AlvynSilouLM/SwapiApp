@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import Domain
 
 extension FilmListItemViewModel {
     static func convert<Details: View>(_ films: [Film], details: @escaping (_ film: FilmDetailsViewModel) -> Details) -> [FilmListItemViewModel<Details>] {

@@ -7,20 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B07055D2A1F3636008D4F7D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B07055C2A1F3636008D4F7D /* HTTPClient.swift */; };
-		1B0705602A1F3724008D4F7D /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B07055F2A1F3724008D4F7D /* URLSessionHTTPClient.swift */; };
-		1B0705652A1F380E008D4F7D /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0705642A1F380E008D4F7D /* URLSessionHTTPClientTests.swift */; };
-		1B0705682A1F3871008D4F7D /* URLProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0705672A1F3871008D4F7D /* URLProtocolStub.swift */; };
-		1B07056A2A1F39E9008D4F7D /* RemoteLoaderTestsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0705692A1F39E9008D4F7D /* RemoteLoaderTestsHelpers.swift */; };
-		1B0705732A205E71008D4F7D /* FilmLoaderUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0705722A205E71008D4F7D /* FilmLoaderUseCase.swift */; };
-		1B0705752A20610E008D4F7D /* FilmLoaderUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0705742A20610E008D4F7D /* FilmLoaderUseCaseTests.swift */; };
-		1B0705762A206446008D4F7D /* FilmLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B07056F2A205C5C008D4F7D /* FilmLoader.swift */; };
-		1B0705772A20644B008D4F7D /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B07056D2A205AE3008D4F7D /* Film.swift */; };
-		1B07057B2A2066F9008D4F7D /* FilmListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B07057A2A2066F9008D4F7D /* FilmListEndpoint.swift */; };
-		1B07057E2A206B1B008D4F7D /* FilmListEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B07057D2A206B1B008D4F7D /* FilmListEndpointTests.swift */; };
-		1B0705802A2072E0008D4F7D /* FilmListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B07057F2A2072E0008D4F7D /* FilmListAdapter.swift */; };
-		1B0705822A207685008D4F7D /* FilmListAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0705812A207685008D4F7D /* FilmListAdapterTests.swift */; };
-		1B0705842A207F91008D4F7D /* DomainTestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0705832A207F91008D4F7D /* DomainTestsHelper.swift */; };
 		1B4AB47C2A149A3A0088052B /* V1ExerciceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB47B2A149A3A0088052B /* V1ExerciceApp.swift */; };
 		1B4AB47E2A149A3A0088052B /* FilmsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB47D2A149A3A0088052B /* FilmsListView.swift */; };
 		1B4AB4802A149A3C0088052B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4AB47F2A149A3C0088052B /* Assets.xcassets */; };
@@ -32,10 +18,14 @@
 		1B4AB4AE2A14A71F0088052B /* FilmsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4AD2A14A71F0088052B /* FilmsListViewModel.swift */; };
 		1B4AB4B32A14ACDC0088052B /* FilmListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4B22A14ACDC0088052B /* FilmListItemView.swift */; };
 		1B4AB4B72A14B3430088052B /* FilmNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4AB4B62A14B3430088052B /* FilmNavigationView.swift */; };
+		1B5604AA2A2D2507003E20A8 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 1B5604A92A2D2507003E20A8 /* Data */; };
 		1B7E5BFF2A27216B00DF3F8B /* FilmDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E5BFE2A27216B00DF3F8B /* FilmDetailsView.swift */; };
 		1B7E5C012A2726EC00DF3F8B /* FilmListItemViewModel+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E5C002A2726EC00DF3F8B /* FilmListItemViewModel+Mapping.swift */; };
 		1B7E5C032A272FD500DF3F8B /* FilmDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E5C022A272FD500DF3F8B /* FilmDetailsViewModel.swift */; };
 		1B7E5C062A27328300DF3F8B /* FilmListItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7E5C052A27328300DF3F8B /* FilmListItemViewModelTests.swift */; };
+		1BD26E2A2A2DC6D200728C28 /* FilmAppNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD26E292A2DC6D200728C28 /* FilmAppNavigationViewModel.swift */; };
+		1BD26E2D2A2DC9FA00728C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD26E2C2A2DC9FA00728C28 /* AppDelegate.swift */; };
+		1BE9D3CC2A2D221500273CD6 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 1BE9D3CB2A2D221500273CD6 /* Domain */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,20 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B07055C2A1F3636008D4F7D /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		1B07055F2A1F3724008D4F7D /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
-		1B0705642A1F380E008D4F7D /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
-		1B0705672A1F3871008D4F7D /* URLProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolStub.swift; sourceTree = "<group>"; };
-		1B0705692A1F39E9008D4F7D /* RemoteLoaderTestsHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteLoaderTestsHelpers.swift; sourceTree = "<group>"; };
-		1B07056D2A205AE3008D4F7D /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
-		1B07056F2A205C5C008D4F7D /* FilmLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmLoader.swift; sourceTree = "<group>"; };
-		1B0705722A205E71008D4F7D /* FilmLoaderUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmLoaderUseCase.swift; sourceTree = "<group>"; };
-		1B0705742A20610E008D4F7D /* FilmLoaderUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmLoaderUseCaseTests.swift; sourceTree = "<group>"; };
-		1B07057A2A2066F9008D4F7D /* FilmListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmListEndpoint.swift; sourceTree = "<group>"; };
-		1B07057D2A206B1B008D4F7D /* FilmListEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmListEndpointTests.swift; sourceTree = "<group>"; };
-		1B07057F2A2072E0008D4F7D /* FilmListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmListAdapter.swift; sourceTree = "<group>"; };
-		1B0705812A207685008D4F7D /* FilmListAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmListAdapterTests.swift; sourceTree = "<group>"; };
-		1B0705832A207F91008D4F7D /* DomainTestsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTestsHelper.swift; sourceTree = "<group>"; };
 		1B4AB4782A149A3A0088052B /* V1Exercice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = V1Exercice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B4AB47B2A149A3A0088052B /* V1ExerciceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V1ExerciceApp.swift; sourceTree = "<group>"; };
 		1B4AB47D2A149A3A0088052B /* FilmsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmsListView.swift; sourceTree = "<group>"; };
@@ -87,6 +63,10 @@
 		1B7E5C002A2726EC00DF3F8B /* FilmListItemViewModel+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmListItemViewModel+Mapping.swift"; sourceTree = "<group>"; };
 		1B7E5C022A272FD500DF3F8B /* FilmDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailsViewModel.swift; sourceTree = "<group>"; };
 		1B7E5C052A27328300DF3F8B /* FilmListItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmListItemViewModelTests.swift; sourceTree = "<group>"; };
+		1BD26E292A2DC6D200728C28 /* FilmAppNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmAppNavigationViewModel.swift; sourceTree = "<group>"; };
+		1BD26E2C2A2DC9FA00728C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1BE9D3C22A29C5D100273CD6 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = Dependencies/Data; sourceTree = "<group>"; };
+		1BE9D3C32A29C76800273CD6 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Dependencies/Domain; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BE9D3CC2A2D221500273CD6 /* Domain in Frameworks */,
 				1B4AB4AA2A14A24F0088052B /* EnkiDesignSystem in Frameworks */,
+				1B5604AA2A2D2507003E20A8 /* Data in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,31 +97,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B07055A2A1F2FE7008D4F7D /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				1B07055E2A1F36E1008D4F7D /* NetworkAPIImpl */,
-				1B07055B2A1F2FF7008D4F7D /* NetworkAPI */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		1B07055B2A1F2FF7008D4F7D /* NetworkAPI */ = {
-			isa = PBXGroup;
-			children = (
-				1B07055C2A1F3636008D4F7D /* HTTPClient.swift */,
-			);
-			path = NetworkAPI;
-			sourceTree = "<group>";
-		};
-		1B07055E2A1F36E1008D4F7D /* NetworkAPIImpl */ = {
-			isa = PBXGroup;
-			children = (
-				1B07055F2A1F3724008D4F7D /* URLSessionHTTPClient.swift */,
-			);
-			path = NetworkAPIImpl;
-			sourceTree = "<group>";
-		};
 		1B0705612A1F3788008D4F7D /* FilmList */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,37 +109,8 @@
 		1B0705622A1F3794008D4F7D /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				1B0705632A1F37B0008D4F7D /* NetworkAPIImpl */,
 			);
 			path = Repository;
-			sourceTree = "<group>";
-		};
-		1B0705632A1F37B0008D4F7D /* NetworkAPIImpl */ = {
-			isa = PBXGroup;
-			children = (
-				1B0705662A1F3842008D4F7D /* Helper */,
-				1B0705642A1F380E008D4F7D /* URLSessionHTTPClientTests.swift */,
-			);
-			path = NetworkAPIImpl;
-			sourceTree = "<group>";
-		};
-		1B0705662A1F3842008D4F7D /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				1B0705672A1F3871008D4F7D /* URLProtocolStub.swift */,
-				1B0705692A1F39E9008D4F7D /* RemoteLoaderTestsHelpers.swift */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		1B07056C2A205ABB008D4F7D /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				1B07056D2A205AE3008D4F7D /* Film.swift */,
-				1B07056F2A205C5C008D4F7D /* FilmLoader.swift */,
-				1B0705782A2066BA008D4F7D /* RemoteLoaderUseCase */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		1B0705712A205D8C008D4F7D /* Domain */ = {
@@ -193,23 +121,9 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		1B0705782A2066BA008D4F7D /* RemoteLoaderUseCase */ = {
-			isa = PBXGroup;
-			children = (
-				1B07057A2A2066F9008D4F7D /* FilmListEndpoint.swift */,
-				1B0705722A205E71008D4F7D /* FilmLoaderUseCase.swift */,
-				1B07057F2A2072E0008D4F7D /* FilmListAdapter.swift */,
-			);
-			path = RemoteLoaderUseCase;
-			sourceTree = "<group>";
-		};
 		1B07057C2A206B01008D4F7D /* RemoteLoaderUseCase */ = {
 			isa = PBXGroup;
 			children = (
-				1B0705832A207F91008D4F7D /* DomainTestsHelper.swift */,
-				1B0705742A20610E008D4F7D /* FilmLoaderUseCaseTests.swift */,
-				1B07057D2A206B1B008D4F7D /* FilmListEndpointTests.swift */,
-				1B0705812A207685008D4F7D /* FilmListAdapterTests.swift */,
 			);
 			path = RemoteLoaderUseCase;
 			sourceTree = "<group>";
@@ -217,10 +131,13 @@
 		1B4AB46F2A149A3A0088052B = {
 			isa = PBXGroup;
 			children = (
+				1BE9D3C32A29C76800273CD6 /* Domain */,
+				1BE9D3C22A29C5D100273CD6 /* Data */,
 				1B4AB47A2A149A3A0088052B /* V1Exercice */,
 				1B4AB48B2A149A3C0088052B /* V1ExerciceTests */,
 				1B4AB4952A149A3C0088052B /* V1ExerciceUITests */,
 				1B4AB4792A149A3A0088052B /* Products */,
+				1BE9D3C42A2D05D400273CD6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,11 +154,10 @@
 		1B4AB47A2A149A3A0088052B /* V1Exercice */ = {
 			isa = PBXGroup;
 			children = (
-				1B4AB4B62A14B3430088052B /* FilmNavigationView.swift */,
 				1B4AB47B2A149A3A0088052B /* V1ExerciceApp.swift */,
+				1BD26E2C2A2DC9FA00728C28 /* AppDelegate.swift */,
 				1B7E5C042A27326F00DF3F8B /* SharedPresentation */,
-				1B4AB4AB2A14A3B40088052B /* FilmList */,
-				1B7E5BFD2A27213D00DF3F8B /* FilmDetails */,
+				1BD26E282A2DC5BE00728C28 /* Scenes */,
 				1B4AB4812A149A3C0088052B /* Preview Content */,
 			);
 			path = V1Exercice;
@@ -277,8 +193,6 @@
 		1B4AB4AB2A14A3B40088052B /* FilmList */ = {
 			isa = PBXGroup;
 			children = (
-				1B07056C2A205ABB008D4F7D /* Domain */,
-				1B07055A2A1F2FE7008D4F7D /* Repository */,
 				1B4AB4AC2A14A4090088052B /* Presentation */,
 			);
 			path = FilmList;
@@ -320,6 +234,32 @@
 			path = SharedPresentation;
 			sourceTree = "<group>";
 		};
+		1BD26E282A2DC5BE00728C28 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1BD26E2B2A2DC70600728C28 /* FilmNavigation */,
+				1B4AB4AB2A14A3B40088052B /* FilmList */,
+				1B7E5BFD2A27213D00DF3F8B /* FilmDetails */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		1BD26E2B2A2DC70600728C28 /* FilmNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				1B4AB4B62A14B3430088052B /* FilmNavigationView.swift */,
+				1BD26E292A2DC6D200728C28 /* FilmAppNavigationViewModel.swift */,
+			);
+			path = FilmNavigation;
+			sourceTree = "<group>";
+		};
+		1BE9D3C42A2D05D400273CD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,6 +278,8 @@
 			name = V1Exercice;
 			packageProductDependencies = (
 				1B4AB4A92A14A24F0088052B /* EnkiDesignSystem */,
+				1BE9D3CB2A2D221500273CD6 /* Domain */,
+				1B5604A92A2D2507003E20A8 /* Data */,
 			);
 			productName = V1Exercice;
 			productReference = 1B4AB4782A149A3A0088052B /* V1Exercice.app */;
@@ -456,20 +398,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B0705602A1F3724008D4F7D /* URLSessionHTTPClient.swift in Sources */,
 				1B4AB47E2A149A3A0088052B /* FilmsListView.swift in Sources */,
 				1B7E5C012A2726EC00DF3F8B /* FilmListItemViewModel+Mapping.swift in Sources */,
-				1B07057B2A2066F9008D4F7D /* FilmListEndpoint.swift in Sources */,
-				1B0705732A205E71008D4F7D /* FilmLoaderUseCase.swift in Sources */,
 				1B7E5BFF2A27216B00DF3F8B /* FilmDetailsView.swift in Sources */,
 				1B7E5C032A272FD500DF3F8B /* FilmDetailsViewModel.swift in Sources */,
+				1BD26E2A2A2DC6D200728C28 /* FilmAppNavigationViewModel.swift in Sources */,
 				1B4AB4B72A14B3430088052B /* FilmNavigationView.swift in Sources */,
-				1B0705802A2072E0008D4F7D /* FilmListAdapter.swift in Sources */,
-				1B07055D2A1F3636008D4F7D /* HTTPClient.swift in Sources */,
-				1B0705772A20644B008D4F7D /* Film.swift in Sources */,
 				1B4AB4AE2A14A71F0088052B /* FilmsListViewModel.swift in Sources */,
 				1B4AB47C2A149A3A0088052B /* V1ExerciceApp.swift in Sources */,
-				1B0705762A206446008D4F7D /* FilmLoader.swift in Sources */,
+				1BD26E2D2A2DC9FA00728C28 /* AppDelegate.swift in Sources */,
 				1B4AB4B32A14ACDC0088052B /* FilmListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,15 +415,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B07057E2A206B1B008D4F7D /* FilmListEndpointTests.swift in Sources */,
-				1B0705822A207685008D4F7D /* FilmListAdapterTests.swift in Sources */,
 				1B4AB48D2A149A3C0088052B /* V1ExerciceTests.swift in Sources */,
-				1B07056A2A1F39E9008D4F7D /* RemoteLoaderTestsHelpers.swift in Sources */,
-				1B0705752A20610E008D4F7D /* FilmLoaderUseCaseTests.swift in Sources */,
 				1B7E5C062A27328300DF3F8B /* FilmListItemViewModelTests.swift in Sources */,
-				1B0705842A207F91008D4F7D /* DomainTestsHelper.swift in Sources */,
-				1B0705682A1F3871008D4F7D /* URLProtocolStub.swift in Sources */,
-				1B0705652A1F380E008D4F7D /* URLSessionHTTPClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +575,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -674,6 +605,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -820,6 +752,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B4AB4A82A14A24F0088052B /* XCRemoteSwiftPackageReference "enki-design-system-ios" */;
 			productName = EnkiDesignSystem;
+		};
+		1B5604A92A2D2507003E20A8 /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+		1BE9D3CB2A2D221500273CD6 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
