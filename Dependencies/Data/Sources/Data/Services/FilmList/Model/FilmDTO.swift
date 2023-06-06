@@ -4,7 +4,7 @@
 
 import Foundation
 
-public struct FilmDTO: Decodable, Equatable {
+public struct FilmDTO: Codable, Equatable {
     public let title: String
     public let episodeId: Int
     public let openingCrawl: String

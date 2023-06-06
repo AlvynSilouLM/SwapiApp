@@ -13,6 +13,10 @@ class FilmListAdapter {
     static func convert(_ films: [FilmDTO]) throws -> [Film]  {
         return films.toModels()
     }
+
+    static func convert(_ film: Film) -> FilmDTO {
+        FilmDTO(title: film.title, episodeId: film.id, openingCrawl: film.description)
+    }
 }
 
 private extension Array where Element == FilmDTO {

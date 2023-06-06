@@ -69,6 +69,14 @@ private class FilmRepositorySpy: FilmRepositoryProtocol {
         return try getAllResult.get()
     }
 
+    func setFavorite(_ film: FilmDTO) async throws -> Bool {
+        false
+    }
+
+    func getAllFavorites() async throws -> [FilmDTO] {
+        []
+    }
+
     // MARK: - Helpers
     func stubGetAll(with dto: [FilmDTO]) {
         getAllResult = .success(dto)

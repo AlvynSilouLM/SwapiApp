@@ -7,13 +7,10 @@ import SwiftUI
 import EnkiDesignSystem
 
 struct FilmDetailsView: View {
-    var viewModel: FilmDetailsViewModel
+    @State var viewModel: FilmDetailsViewModel
+    @State var isFeedbackPresented: Bool = false
 
-    @State var isFavorite: Bool = false
-
-    @State var feedback: String?
-
-    var onFavoriteButtonTapped: (() -> Void)?
+    var onFavoriteButtonTapped: (() async -> FilmDetailsViewModel)?
 
     var body: some View {
         Text(viewModel.description)
@@ -22,24 +19,27 @@ struct FilmDetailsView: View {
             .toolbar(content: toolBarContent)
             .navigationTitle(viewModel.title)
             .overlay(alignment: .bottom) {
-                if let feedback {
+                if isFeedbackPresented,
+                   let feedback = viewModel.feedback {
                     SnackbarView(message: feedback) {
-
+                        self.isFeedbackPresented = false
                     }
                 }
             }
     }
 
     func toolBarContent() -> some ToolbarContent {
-        let favoriteIcon = Image(asset: EnkiAssets.Icons.icFavorite)
+        let favoriteIcon = viewModel.isFavorite ? Image(systemName: "heart.fill") : Image(asset: EnkiAssets.Icons.icFavorite)
         return Group {
             ToolbarItem {
-                EnkiButton(style: .secondary, iconType: .alone(image: favoriteIcon)) {
-                    onFavoriteButtonTapped?()
-                    if isFavorite {
-                        feedback = "Ajouté aux favoris"
+                EnkiButton(style: .primary, iconType: .alone(image: favoriteIcon)) {
+                    Task {
+                        if let onFavoriteButtonTapped {
+                            viewModel = await onFavoriteButtonTapped()
+                            isFeedbackPresented = true
+                        }
                     }
-                }
+                }.enkiBackgroundColor(.absolute(.white))
                 .padding()
             }
         }

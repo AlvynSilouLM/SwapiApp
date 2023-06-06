@@ -7,22 +7,21 @@ import SwiftUI
 import Domain
 
 extension FilmListItemViewModel {
-    static func convert<Details: View>(_ films: [Film], details: @escaping (_ film: FilmDetailsViewModel) -> Details) -> [FilmListItemViewModel<Details>] {
-        films.map {
-            convert($0, details: details)
-        }
-    }
-
-    static func convert<Details: View> (_ film: Film, details: @escaping (_ film: FilmDetailsViewModel) -> Details) -> FilmListItemViewModel<Details> {
+    static func convert<Details: View> (_ film: Film, isFavorite: Bool, details: @escaping (_ film: FilmDetailsViewModel) -> Details) -> FilmListItemViewModel<Details> {
         FilmListItemViewModel<Details>(
             title: "\(film.id). \"\(film.title)\"",
             destination: {
-                details(convert(film))
+                details(FilmDetailsViewModel.convert(film, isFavorite: isFavorite))
             })
     }
+}
 
-    static func convert(_ film: Film) -> FilmDetailsViewModel {
+extension FilmDetailsViewModel {
+    static func convert(_ film: Film, isFavorite: Bool) -> FilmDetailsViewModel {
         FilmDetailsViewModel(title: film.title,
-                             description: film.description)
+                             description: film.description,
+                             isFavorite: isFavorite,
+                             feedback: isFavorite ? "Ajouté aux favoris" : "Retiré des favoris")
     }
 }
+

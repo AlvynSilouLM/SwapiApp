@@ -14,7 +14,7 @@ struct V1ExerciceApp: App {
 
     var body: some Scene {
         WindowGroup {
-            FilmNavigationView(filmListLoaderVM: FilmAppNavigationViewModel(filmListLoader: appDelegate.getFilmListUsecase))
+            FilmNavigationView(filmListLoaderVM: FilmAppNavigationViewModel(getFilmListUseCase: appDelegate.getFilmListUsecase, setFilmFavoriteUseCase: appDelegate.setFilmFavorite, getFavoritesFilmsUseCase: appDelegate.getFavoritesFilmsUseCase))
         }
     }
 }
