@@ -31,7 +31,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }()
 
     private lazy var filmRemoteDataSource: FilmRemoteDataSourceProtocol = {
-        guard let filmListRequest = try? FilmListEndpoint.get.request(baseURL: URL(string: "https://swapi.dev/")!) else {
+        guard let filmListRequest = try? FilmRouter.getAllFilmRequest(baseURL: URL(string: "https://swapi.dev/")!) else {
             return NullFilmRemoteDataSource()
         }
 
@@ -53,41 +53,4 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
        return FilmLocalDataSource(database: database)
     }()
-}
-
-
-internal class NullGetFilmListUseCase: GetAllFilmsUseCaseProtocol {
-    func perform() async throws -> [Domain.Film] {
-        return []
-    }
-}
-
-internal class NullSetFavoriteFilmUseCase: SetFavoriteUseCaseProtocol {
-    func perform(_ film: Film) async throws -> Bool {
-        return false
-    }
-}
-
-
-internal class NullFilmLocalDataSource: FilmLocalDataSourceProtocol {
-    func getAll() async throws -> [FilmDTO] {
-        return []
-    }
-
-    func setFavorite(_ film: FilmDTO) async throws -> Bool {
-        return false
-    }
-}
-
-
-internal class NullFilmRemoteDataSource: FilmRemoteDataSourceProtocol {
-    func getAll() async throws -> [FilmDTO] {
-        []
-    }
-}
-
-internal class NullGetFavoriteFilmListUseCase: GetFavoriteFilmListUseCaseProtocol {
-    func perform() async throws -> [Film] {
-        []
-    }
 }
