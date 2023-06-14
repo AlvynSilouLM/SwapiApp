@@ -4,7 +4,7 @@
 
 import Foundation
 
-public struct Film: Equatable {
+public struct Film: Equatable, Hashable {
     public let id: Int
     public let title: String
     public let description: String

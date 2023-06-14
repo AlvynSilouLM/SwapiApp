@@ -9,7 +9,7 @@ public final class GetFilmListUseCase {
 
     private let filmRepository: FilmRepositoryProtocol
 
-    public init(filmRepository: FilmRepositoryProtocol) {
+    public init(filmRepository: FilmRepositoryProtocol = FilmRepository()) {
         self.filmRepository = filmRepository
     }
 }

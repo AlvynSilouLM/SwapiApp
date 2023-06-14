@@ -9,12 +9,10 @@ import Data
 
 @main
 struct V1ExerciceApp: App {
-
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
+    
     var body: some Scene {
         WindowGroup {
-            FilmNavigationView(filmListLoaderVM: FilmAppNavigationViewModel(getFilmListUseCase: appDelegate.getFilmListUsecase, setFilmFavoriteUseCase: appDelegate.setFilmFavorite, getFavoritesFilmsUseCase: appDelegate.getFavoritesFilmsUseCase))
+            FilmNavigationView()
         }
     }
 }

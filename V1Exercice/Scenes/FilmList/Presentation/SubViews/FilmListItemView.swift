@@ -4,14 +4,19 @@
 //
 //
 
-import Foundation
-import SwiftUI
+import Domain
 import EnkiDesignSystem
+import SwiftUI
 
 public struct FilmListItemView: View {
-    var title: String
+    let film: Film
+
+    var title: String {
+        film.title
+    }
 
     public var body: some View {
         LabelCell(label: title)
     }
 }
+

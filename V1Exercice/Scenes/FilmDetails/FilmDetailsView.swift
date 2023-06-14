@@ -3,14 +3,12 @@
 //  V1Exercice
 //
 
-import SwiftUI
+import Domain
 import EnkiDesignSystem
+import SwiftUI
 
 struct FilmDetailsView: View {
-    @State var viewModel: FilmDetailsViewModel
-    @State var isFeedbackPresented: Bool = false
-
-    var onFavoriteButtonTapped: (() async -> FilmDetailsViewModel)?
+    @ObservedObject var viewModel: FilmDetailsViewModel
 
     var body: some View {
         Text(viewModel.description)
@@ -19,11 +17,8 @@ struct FilmDetailsView: View {
             .toolbar(content: toolBarContent)
             .navigationTitle(viewModel.title)
             .overlay(alignment: .bottom) {
-                if isFeedbackPresented,
-                   let feedback = viewModel.feedback {
-                    SnackbarView(message: feedback) {
-                        self.isFeedbackPresented = false
-                    }
+                if let feedback = viewModel.feedback {
+                    SnackbarView(message: feedback) { }
                 }
             }
     }
@@ -34,10 +29,7 @@ struct FilmDetailsView: View {
             ToolbarItem {
                 EnkiButton(style: .primary, iconType: .alone(image: favoriteIcon)) {
                     Task {
-                        if let onFavoriteButtonTapped {
-                            viewModel = await onFavoriteButtonTapped()
-                            isFeedbackPresented = true
-                        }
+                        await viewModel.setFavorite()
                     }
                 }.enkiBackgroundColor(.absolute(.white))
                 .padding()
@@ -47,7 +39,8 @@ struct FilmDetailsView: View {
 }
 
 struct FilmDetailsView_Previews: PreviewProvider {
-    static var viewModel = FilmDetailsViewModel(title: "Mon titre", description: "Ma description")
+    static var film: Film = Film(id: 5, title: "Mon titre de film", description: "Ma decription")
+    static var viewModel = FilmDetailsViewModel(film: .constant(film))
     static var previews: some View {
         Group {
             FilmDetailsView(viewModel: viewModel)
@@ -56,9 +49,7 @@ struct FilmDetailsView_Previews: PreviewProvider {
             NavigationView {
                 FilmDetailsView(viewModel: viewModel)
                     .previewDisplayName("With Navigation")
-
             }
-
         }
     }
 }

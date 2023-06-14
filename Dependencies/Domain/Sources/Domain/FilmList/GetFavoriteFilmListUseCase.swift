@@ -11,7 +11,7 @@ public protocol GetFavoriteFilmListUseCaseProtocol {
 public final class GetFavoriteFilmListUseCase {
     fileprivate let repository: FilmRepositoryProtocol
 
-    public init(repository: FilmRepositoryProtocol) {
+    public init(repository: FilmRepositoryProtocol = FilmRepository()) {
         self.repository = repository
     }
 }

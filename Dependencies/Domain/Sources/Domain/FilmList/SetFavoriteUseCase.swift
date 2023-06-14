@@ -8,7 +8,7 @@ import Data
 public final class SetFavoriteUseCase {
     let repository: FilmRepositoryProtocol
 
-    public init(repository: FilmRepositoryProtocol) {
+    public init(repository: FilmRepositoryProtocol = FilmRepository()) {
         self.repository = repository
     }
 }

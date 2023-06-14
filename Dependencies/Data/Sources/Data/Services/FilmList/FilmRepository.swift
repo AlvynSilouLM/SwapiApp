@@ -16,7 +16,8 @@ public final class FilmRepository {
     var remoteDataSource: FilmRemoteDataSourceProtocol
     var localDataSource: FilmLocalDataSourceProtocol
 
-    public init(remoteDataSource: FilmRemoteDataSourceProtocol, localDataSource: FilmLocalDataSourceProtocol) {
+    public init(remoteDataSource: FilmRemoteDataSourceProtocol = FilmRemoteDataSource(),
+                localDataSource: FilmLocalDataSourceProtocol = FilmLocalDataSource()) {
         self.remoteDataSource = remoteDataSource
         self.localDataSource = localDataSource
     }

@@ -12,7 +12,7 @@ public protocol FilmLocalDataSourceProtocol {
 public final class FilmLocalDataSource {
     private let database: FilmDatabaseProtocol
 
-    public init(database: FilmDatabaseProtocol) {
+    public init(database: FilmDatabaseProtocol = FilmDatabase.shared) {
         self.database = database
     }
 }

@@ -15,6 +15,14 @@ public actor FilmDatabase {
         let favorites: [FilmDTO]
     }
 
+    public static var shared: FilmDatabaseProtocol = {
+        guard let databaseURL = try? FileManager.createDatabaseURL("favorites.data") else {
+            return NullFilmDatabaseSource()
+        }
+
+        return FilmDatabase(databaseURL: databaseURL)
+    }()
+
     private let databaseURL: URL
 
     public init(databaseURL: URL) {
@@ -37,5 +45,26 @@ extension FilmDatabase: FilmDatabaseProtocol {
         let cache = Cache(favorites: films)
         let encoded = try encoder.encode(cache)
         try encoded.write(to: databaseURL)
+    }
+}
+
+private extension FileManager {
+    static func createDatabaseURL(_ databaseName: String) throws -> URL {
+        try FileManager.default.url(for: .documentDirectory,
+                                                                                     in: .userDomainMask,
+                                                                                     appropriateFor: nil,
+                                                                                     create: false)
+                                       .appendingPathComponent(databaseName)
+    }
+}
+
+
+internal class NullFilmDatabaseSource: FilmDatabaseProtocol {
+    func retrieveAll() async throws -> [FilmDTO] {
+        return []
+    }
+
+    func insert(_ films: [FilmDTO]) async throws {
+
     }
 }

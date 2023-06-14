@@ -10,23 +10,25 @@ public protocol FilmRemoteDataSourceProtocol {
 }
 
 public final class FilmRemoteDataSource {
-    private let request: URLRequest
+    private let router: Router
     private let httpClient: HTTPClient
-    private let mapper: FilmListAdapter.Convert
 
-    public init(request: URLRequest,
-                httpClient: HTTPClient,
-                mapper: @escaping FilmListAdapter.Convert) {
-        self.request = request
+    private struct Constants {
+        private init() {}
+        static var baseURL = "https://swapi.dev"
+    }
+
+    public init(httpClient: HTTPClient = URLSessionHTTPClient.shared) {
+        self.router = Router(baseURL: URL(string: Constants.baseURL))
         self.httpClient = httpClient
-        self.mapper = mapper
     }
 }
 
 // MARK: - GetAll
 extension FilmRemoteDataSource: FilmRemoteDataSourceProtocol {
     public func getAll() async throws -> [FilmDTO] {
-        let (data, response) = try await httpClient.fetch(from: request)
-        return try mapper(data, response)
+        let getAllFilmRequest = try router.getAllFilmRequest()
+        let (data, response) = try await httpClient.fetch(from: getAllFilmRequest)
+        return try FilmListAdapter.convert(data, from: response)
     }
 }

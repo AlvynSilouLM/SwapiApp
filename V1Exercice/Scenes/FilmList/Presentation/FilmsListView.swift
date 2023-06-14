@@ -6,44 +6,39 @@
 import SwiftUI
 import EnkiDesignSystem
 
-struct FilmsListView<Details : View>: View {
-    @Binding var films: [FilmListItemViewModel<Details>]
+import Domain
+import EnkiDesignSystem
+import SwiftUI
 
+struct FilmsListView: View {
+    @ObservedObject var viewModel: FilmsListViewModel
+    
     var body: some View {
-
-        if films.isEmpty {
-            Spinner()
-        } else {
-            EnkiList {
-                ForEach(films, id: \.self) { film in
-                    NavigationLink(destination: film.destination) {
-                        cell(for: film.title)
-                    }
+        EnkiList {
+            ForEach($viewModel.films, id: \.self) { film in
+                NavigationLink(destination: filmDetailWith(film)) {
+                    cell(for: film.wrappedValue)
                 }
-                .listRowSeparator(.hidden)
+            }
+            .listRowSeparator(.hidden)
+        }
+        .task {
+            await viewModel.loadAllFilms()
+        }
+        .overlay {
+            if viewModel.films.isEmpty {
+                Spinner()
             }
         }
-    }
 
-    private func cell(for filmTitle: String) -> some View {
-        FilmListItemView(title: filmTitle)
     }
+    
 }
 
-struct FilmsListView_Previews: PreviewProvider {
-    @State static var films: [FilmListItemViewModel<Text>] = []
-    @State static var films2: [FilmListItemViewModel<Text>] = [.init(title: " 3. \"A New Faith\"", destination: {
-        Text("Ici Details")
-    } )]
+private func filmDetailWith(_ film: Binding<Film>) -> some View {
+    FilmDetailsView(viewModel: FilmDetailsViewModel(film: film))
+}
 
-    static var previews: some View {
-        Group {
-            FilmsListView<Text>(films: $films)
-                .padding()
-                .previewDisplayName("Loading State or Empty State")
-            FilmsListView<Text>(films: $films2)
-                .padding()
-                .previewDisplayName("Films List")
-        }
-    }
+private func cell(for film: Film) -> some View {
+    FilmListItemView(film: film)
 }
