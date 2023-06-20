@@ -20,7 +20,7 @@ public final class Router {
         var components = URLComponents()
         components.scheme = baseURL?.scheme
         components.host = baseURL?.host
-        components.path = baseURL?.path ?? "" + path
+        components.path = (baseURL?.path ?? "") + path
 
         guard let url = components.url else {
             throw CannotCreateURLRequest()
